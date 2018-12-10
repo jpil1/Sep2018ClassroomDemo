@@ -49,7 +49,7 @@ void Main()
 	results5.Dump();
 	
 	var exists = from x in ServiceDetails
-				where x.JobID.Equals(2) && x.ServiceDetailID.Equals(2)
+				where x.JobID.Equals(1)
 				select x;
 	exists.Dump();
 }
