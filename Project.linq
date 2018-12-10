@@ -1,6 +1,6 @@
 <Query Kind="Program">
   <Connection>
-    <ID>c6f3faac-ca0f-4cc2-96fe-8806d1f46f86</ID>
+    <ID>cf2ca8f7-5cc6-4a36-880f-82b83de5ac97</ID>
     <Persist>true</Persist>
     <Server>.</Server>
     <Database>eBikes</Database>
@@ -33,6 +33,25 @@ void Main()
 	var results3 = from x in Coupons
 					select x;
 	results3.Dump();
+	
+	var results4 = from x in Jobs
+					where x.JobID.Equals(1)
+					select new
+					{
+						Name = x.Customer.LastName + ", " + x.Customer.FirstName,
+						Contact = x.Customer.ContactPhone
+					};
+	results4.Dump();
+	
+	var results5 = from x in ServiceDetails
+					where x.JobID.Equals(3)
+					select x;
+	results5.Dump();
+	
+	var exists = from x in ServiceDetails
+				where x.JobID.Equals(2) && x.ServiceDetailID.Equals(2)
+				select x;
+	exists.Dump();
 }
 
 // Define other methods and classes here
