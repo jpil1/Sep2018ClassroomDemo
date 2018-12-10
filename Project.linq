@@ -1,7 +1,6 @@
 <Query Kind="Program">
   <Connection>
     <ID>cf2ca8f7-5cc6-4a36-880f-82b83de5ac97</ID>
-    <Persist>true</Persist>
     <Server>.</Server>
     <Database>eBikes</Database>
   </Connection>
@@ -44,7 +43,7 @@ void Main()
 	results4.Dump();
 	
 	var results5 = from x in ServiceDetails
-					where x.JobID.Equals(3)
+					where x.ServiceDetailID.Equals(3)
 					select x;
 	results5.Dump();
 	
